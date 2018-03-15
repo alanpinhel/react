@@ -1,5 +1,10 @@
 'use strict'
 
-var sum = require('./app')
+import React from 'react'
+import { render } from 'react-dom'
+import Title from './app'
 
-console.log(sum(1, 2))
+render(
+  <Title />,
+  document.querySelector('[data-js="app"]')
+)
