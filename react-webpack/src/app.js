@@ -2,10 +2,10 @@
 
 import React from 'react'
 
-var Title = React.createClass({
-  render: function() {
+var App = React.createClass({
+  render: function () {
     return <h1>Título</h1>
   }
 })
 
-export default Title
+export default App
