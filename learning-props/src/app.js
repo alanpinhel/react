@@ -6,8 +6,13 @@ import Title from './title'
 var App = React.createClass({
   render: function () {
     return (
-      <div>
-        <Title name='Alan' />
+      <div className='container'>
+        <Title
+          name='Alan'
+          lastName={{
+            first: 'Pi',
+            last: 'nhel'
+          }} />
       </div>
     )
   }
