@@ -8,4 +8,8 @@ const Button = ({ children, handleClick }) => (
   </button>
 )
 
+Button.propsTypes = {
+  handleClick: React.PropTypes.func.isRequired
+}
+
 export default Button
