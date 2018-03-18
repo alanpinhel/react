@@ -1,21 +1,28 @@
 'use strict'
 
 import React, { Component } from 'react'
+import Square from './square'
+import Button from './button'
 
 class App extends Component {
   constructor () {
     super()
     this.state = {
-      text: 'Alan'
+      color: 'green'
     }
   }
 
   render () {
     return (
-      <div className='container' onClick={() => this.setState({
-        text: 'Outro texto'
-      })}>
-        {this.state.text}
+      <div>
+        <Square color={this.state.color} />
+        {['green', 'blue', 'red'].map(color => (
+          <Button
+            key={color}
+            handleClick={() => this.setState({ color })}>
+            {color}
+          </Button>
+        ))}
       </div>
     )
   }
