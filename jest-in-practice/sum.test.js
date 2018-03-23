@@ -1,5 +1,12 @@
 'use strict'
 
-it('Um é igual a 1', () => {
-  expect(1).toBe(2)
+import { expect } from 'chai'
+import sum from './sum'
+
+it('sum should be a function', () => {
+  expect(sum).to.be.a('function')
+})
+
+it('sum(1, 2) should return 3', () => {
+  expect(sum(1, 2)).to.be.equal(3)
 })
