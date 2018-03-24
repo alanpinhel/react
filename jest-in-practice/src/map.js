@@ -1,6 +1,6 @@
 'use strict'
 
-const map = (arr = [], func = (item) => item) => {
+const map = (arr = [], func = item => item) => {
   let newArray = []
 
   arr.forEach((element, index) => {
