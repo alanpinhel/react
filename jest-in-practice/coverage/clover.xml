@@ -1,14 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1521933187666" clover="3.2.0">
-  <project timestamp="1521933187667" name="All files">
-    <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1" elements="8" coveredelements="8" complexity="0" loc="5" ncloc="5" packages="1" files="1" classes="1">
+<coverage generated="1521936139181" clover="3.2.0">
+  <project timestamp="1521936139181" name="All files">
+    <metrics statements="28" coveredstatements="28" conditionals="22" coveredconditionals="22" methods="14" coveredmethods="14" elements="64" coveredelements="64" complexity="0" loc="28" ncloc="28" packages="1" files="6" classes="6">
+      <file name="every-recursive.js" path="/home/alanpinhel/Developments/react/jest-in-practice/src/every-recursive.js">
+        <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="5" count="14" type="stmt"/>
+        <line num="6" count="14" type="cond" truecount="2" falsecount="0"/>
+      </file>
       <file name="every.js" path="/home/alanpinhel/Developments/react/jest-in-practice/src/every.js">
         <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="3" count="1" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
-        <line num="5" count="5" type="cond" truecount="2" falsecount="0"/>
-        <line num="6" count="2" type="stmt"/>
-        <line num="7" count="2" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="5" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+      </file>
+      <file name="filter-recursive.js" path="/home/alanpinhel/Developments/react/jest-in-practice/src/filter-recursive.js">
+        <metrics statements="4" coveredstatements="4" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
+        <line num="3" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="5" count="27" type="stmt"/>
+        <line num="6" count="27" type="cond" truecount="2" falsecount="0"/>
+      </file>
+      <file name="filter.js" path="/home/alanpinhel/Developments/react/jest-in-practice/src/filter.js">
+        <metrics statements="6" coveredstatements="6" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="3" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="6" count="7" type="stmt"/>
+        <line num="7" count="20" type="cond" truecount="2" falsecount="0"/>
+        <line num="8" count="14" type="stmt"/>
+        <line num="12" count="7" type="stmt"/>
+      </file>
+      <file name="map-recursive.js" path="/home/alanpinhel/Developments/react/jest-in-practice/src/map-recursive.js">
+        <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
+        <line num="3" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="4" count="8" type="stmt"/>
+        <line num="5" count="22" type="stmt"/>
+        <line num="6" count="22" type="cond" truecount="2" falsecount="0"/>
+      </file>
+      <file name="map.js" path="/home/alanpinhel/Developments/react/jest-in-practice/src/map.js">
+        <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="3" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="4" count="8" type="stmt"/>
+        <line num="6" count="8" type="stmt"/>
+        <line num="7" count="14" type="stmt"/>
+        <line num="10" count="8" type="stmt"/>
       </file>
     </metrics>
   </project>
