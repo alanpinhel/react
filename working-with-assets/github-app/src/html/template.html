@@ -19,7 +19,9 @@
   <% }) %>
 
   <% htmlWebpackPlugin.files.css.forEach(cssFile => { %>
-    <link rel="stylesheet" href="<%= cssFile %>">
+    <% if (cssFile !== 'crp.css') { %>
+      <link rel="stylesheet" href="<%= cssFile %>">
+    <% } %>
   <% }) %>
 </body>
 
