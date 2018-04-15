@@ -1,7 +1,7 @@
 'use strict'
 
 import { storiesOf, action } from '@kadira/storybook'
-import React from 'react';
+import React from 'react'
 import Actions from './index'
 
 storiesOf('Div', module)
