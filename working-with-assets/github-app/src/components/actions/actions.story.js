@@ -4,15 +4,11 @@ import { storiesOf, action } from '@kadira/storybook'
 import React from 'react'
 import Actions from './index'
 
-storiesOf('Div', module)
-  .add('first story', () => (
-    <Actions
-      getRepos={action('Get Repos')}
-      getStarred={action('Get Starred')} />
-  ))
+const stories = storiesOf('Actions component', module)
 
-  .add('second story', () => (
-    <Actions
-      getRepos={action('Get Repos')}
-      getStarred={action('Get Starred')} />
-  ))
+stories.add('first story', () => (
+  <Actions
+    getRepos={action('Get Repos')}
+    getStarred={action('Get Starred')}
+  />
+))
