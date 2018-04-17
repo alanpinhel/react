@@ -1,3 +1,4 @@
+/*
 'use strict'
 
 import { storiesOf, action } from '@kadira/storybook'
@@ -16,3 +17,4 @@ storiesOf('AppContent component', module)
       getStarred={action('getStarred')}
     />
   ))
+*/
