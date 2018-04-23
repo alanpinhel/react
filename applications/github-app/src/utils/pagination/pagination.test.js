@@ -1,8 +1,7 @@
 'use strict'
 
-import { expect } from 'chai'
+import { expect, assert } from 'chai'
 import pagination from '.'
-import { fail } from 'assert';
 
 test('pagination should be a function', () => {
   expect(pagination).to.be.a('function')
@@ -127,7 +126,7 @@ test('pagination({ total: \'abc\', activePage: 1 }) should throw an error', () =
 
   try {
     pagination(params)
-    fail('unexpected exception')
+    assert.fail('unexpected exception')
   } catch (e) {
     expect(e.message).to.be.equal(result)
   }
@@ -139,7 +138,7 @@ test('pagination({ total: 10, activePage: \'1a\' }) should throw an error', () =
 
   try {
     pagination(params)
-    fail('unexpected exception')
+    assert.fail('unexpected exception')
   } catch (e) {
     expect(e.message).to.be.equal(result)
   }

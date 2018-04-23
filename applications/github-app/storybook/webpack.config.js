@@ -14,7 +14,8 @@ module.exports = function (config, env) {
 
   newConfig.resolve.alias = Object.assign({}, newConfig.resolve.alias, {
     src: path.join(__dirname, '..', 'src'),
-    components: path.join(__dirname, '..', 'src', 'components')
+    components: path.join(__dirname, '..', 'src', 'components'),
+    utils: path.join(__dirname, '..', 'src', 'utils')
   })
 
   return newConfig
