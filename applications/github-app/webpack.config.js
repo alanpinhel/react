@@ -3,8 +3,8 @@
 const path = require('path')
 const webpack = require('webpack')
 const validate = require('webpack-validator')
-
 const HtmlPlugin = require('html-webpack-plugin')
+
 const DashboardPlugin = require('webpack-dashboard/plugin')
 
 module.exports = validate({

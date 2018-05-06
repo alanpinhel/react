@@ -4,6 +4,7 @@ const path = require('path')
 const webpack = require('webpack')
 const validate = require('webpack-validator')
 const HtmlPlugin = require('html-webpack-plugin')
+
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const crp = new ExtractTextPlugin('crp.css')
 const styles = new ExtractTextPlugin('[name]-[hash].css')
