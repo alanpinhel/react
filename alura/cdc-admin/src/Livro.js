@@ -8,22 +8,7 @@ class FormularioLivro extends Component {
   constructor(props) {
     super(props);
     this.state = { titulo: '', preco: '', autorId: '' };
-    this.setTitulo = this.setTitulo.bind(this);
-    this.setPreco = this.setPreco.bind(this);
-    this.setAutorId = this.setAutorId.bind(this);
     this.handleLivroSubmit = this.handleLivroSubmit.bind(this);
-  }
-
-  setTitulo(e) {
-    this.setState({ titulo: e.target.value });
-  }
-
-  setPreco(e) {
-    this.setState({ preco: e.target.value });
-  }
-
-  setAutorId(e) {
-    this.setState({ autorId: e.target.value });
   }
 
   handleLivroSubmit(e) {
@@ -53,6 +38,10 @@ class FormularioLivro extends Component {
     this.setState({ titulo: '', preco: '', autorId: '' });
   }
 
+  salvaAlteracao(nomeInput, evento) {
+    this.setState({ [nomeInput]: evento.target.value });
+  }
+
   render() {
     let autores = this.props.autores.map(autor =>
       <option key={autor.id} value={autor.id}>{autor.nome}</option>
@@ -60,18 +49,42 @@ class FormularioLivro extends Component {
 
     return (
       <div className="autorForm">
-        <form className="pure-form pure-form-aligned" onSubmit={this.handleLivroSubmit}>
-          <InputCustomizado id="titulo" name="titulo" label="Titulo: " type="text" value={this.state.titulo} placeholder="Titulo do livro" onChange={this.setTitulo} />
-          <InputCustomizado id="preco" name="preco" label="Preco: " type="decimal" value={this.state.preco} placeholder="Preço do livro" onChange={this.setPreco} />
+        <form
+          className="pure-form pure-form-aligned"
+          onSubmit={this.handleLivroSubmit}>
+          <InputCustomizado
+            id="titulo"
+            name="titulo"
+            label="Titulo: "
+            type="text"
+            value={this.state.titulo}
+            placeholder="Titulo do livro"
+            onChange={this.salvaAlteracao.bind(this, 'titulo')} />
+
+          <InputCustomizado
+            id="preco"
+            name="preco"
+            label="Preço: "
+            type="decimal"
+            value={this.state.preco}
+            placeholder="Preço do livro"
+            onChange={this.salvaAlteracao.bind(this, 'preco')} />
+
           <div className="pure-controls">
-            <select value={this.state.autorId} name="autorId" onChange={this.setAutorId}>
+            <select
+              value={this.state.autorId}
+              name="autorId"
+              onChange={this.salvaAlteracao.bind(this, 'autorId')}>
               <option value="">Selecione</option>
               {autores}
             </select>
           </div>
+
           <div className="pure-control-group">
             <label></label>
-            <button type="submit" className="pure-button pure-button-primary">Gravar</button>
+            <button type="submit" className="pure-button pure-button-primary">
+              Gravar
+            </button>
           </div>
         </form>
       </div>
@@ -106,7 +119,7 @@ class TabelaLivros extends Component {
   }
 }
 
-export default class LivroAdmin extends Component {
+export default class LivroBox extends Component {
   constructor(props) {
     super(props);
     this.state = { lista: [], autores: [] };
