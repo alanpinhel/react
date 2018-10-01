@@ -1,11 +1,14 @@
 'use strict'
 
 import React from 'react'
+import Title from 'components/title'
 
-var App = React.createClass({
-  render: function () {
-    return <h1>Título</h1>
-  }
-})
+import './css/style.css'
+
+const App = () => (
+  <div>
+    <Title>My App</Title>
+  </div>
+)
 
 export default App
