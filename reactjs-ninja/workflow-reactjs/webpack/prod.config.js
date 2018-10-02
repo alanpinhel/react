@@ -1,7 +1,6 @@
 'use strict'
 
 const webpack = require('webpack')
-const { join } = require('path')
 const common = require('./common')
 
 const HtmlPlugin = require('html-webpack-plugin')
@@ -29,7 +28,7 @@ module.exports = {
 
     new webpack.optimize.CommonsChunkPlugin({
       name: 'react-build',
-      minChunks: ({ resource }) => /node_modules\/react(\-dom)?/.test(resource)
+      minChunks: ({ resource }) => /node_modules\/react(-dom)?/.test(resource)
     }),
 
     new HtmlPlugin(common.htmlPluginConfig),
