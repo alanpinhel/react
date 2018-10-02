@@ -27,6 +27,11 @@ module.exports = {
       }
     }),
 
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'react-build',
+      minChunks: ({ resource }) => /node_modules\/react(\-dom)?/.test(resource)
+    }),
+
     new HtmlPlugin(common.htmlPluginConfig),
 
     new webpack.optimize.UglifyJsPlugin({
