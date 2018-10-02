@@ -1,29 +1,23 @@
 'use strict'
 
 import React, { Component } from 'react'
+import MarkdownEditor from './markdown-editor'
 
 import './css/style.css'
 
 class App extends Component {
-  constructor() {
+  constructor () {
     super()
     this.state = { value: '' }
 
-    this.handleSubmit = (e) => {
-      e.preventDefault()
-      this.setState({ value: e.target.textarea.value })
-    }
+    this.handleChange = e => this.setState({ value: e.target.value })
   }
 
-  render() {
+  render () {
     return (
-      <div className="editor">
-        <form onSubmit={this.handleSubmit}>
-          <textarea name="textarea" />
-          <button type="submit">Renderizar markup</button>
-        </form>
-        <div className="view">{this.state.value}</div>
-      </div>
+      <MarkdownEditor
+        value={this.state.value}
+        handleChange={this.handleChange} />
     )
   }
 }
