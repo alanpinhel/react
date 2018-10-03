@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react'
 import marked from 'marked'
-import MarkdownEditor from './markdown-editor'
+import MarkdownEditor from 'components/markdown-editor'
 
 import './css/style.css'
 
@@ -38,6 +38,13 @@ class App extends Component {
       localStorage.removeItem('md')
       this.setState({ value: '' })
     }
+
+    this.handleCreate = () => {
+      this.setState({ value: '' })
+      this.textarea.focus()
+    }
+
+    this.textareaRef = node => { this.textarea = node }
   }
 
   componentDidMount () {
@@ -61,7 +68,9 @@ class App extends Component {
         isSaving={this.state.isSaving}
         handleChange={this.handleChange}
         handleRemove={this.handleRemove}
-        getMarkup={this.getMarkup} />
+        handleCreate={this.handleCreate}
+        getMarkup={this.getMarkup}
+        textareaRef={this.textareaRef} />
     )
   }
 }
