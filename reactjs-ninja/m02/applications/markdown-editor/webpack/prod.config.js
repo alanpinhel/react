@@ -30,7 +30,9 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'react-build',
       chunks: ['main'],
-      minChunks: ({ resource }) => /node_modules\/react(-dom)?|fbjs/.test(resource)
+      minChunks: ({ resource }) =>
+        /node_modules\/react(-dom)?|fbjs/.test(resource) ||
+        /node_modules\/preact/.test(resource)
     }),
 
     new webpack.optimize.CommonsChunkPlugin({
@@ -71,5 +73,10 @@ module.exports = {
     ]
   },
 
-  resolve: common.resolve
+  resolve: {
+    alias: Object.assign({}, common.resolve.alias, {
+      'react': 'preact-compat',
+      'react-dom': 'preact-compat'
+    })
+  }
 }
