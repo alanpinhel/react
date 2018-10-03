@@ -25,6 +25,8 @@ class App extends Component {
     this.handleChange = e => this.setState({ value: e.target.value })
 
     this.getMarkup = () => ({ __html: marked(this.state.value) })
+
+    this.handleSave = () => localStorage.setItem('md', this.state.value)
   }
 
   componentDidMount () {
@@ -37,7 +39,8 @@ class App extends Component {
       <MarkdownEditor
         value={this.state.value}
         handleChange={this.handleChange}
-        getMarkup={this.getMarkup} />
+        getMarkup={this.getMarkup}
+        handleSave={this.handleSave} />
     )
   }
 }
