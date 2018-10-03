@@ -27,6 +27,11 @@ class App extends Component {
     this.getMarkup = () => ({ __html: marked(this.state.value) })
   }
 
+  componentDidMount () {
+    const value = localStorage.getItem('md') || ''
+    this.setState({ value })
+  }
+
   render () {
     return (
       <MarkdownEditor

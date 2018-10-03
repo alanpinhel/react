@@ -8,8 +8,9 @@ const MarkdownEditor = ({ value, handleChange, getMarkup }) => (
       value={value}
       onChange={handleChange}
       autoFocus
-    />
+      />
     <div className='view' dangerouslySetInnerHTML={getMarkup()} />
+    <button onClick={() => localStorage.setItem('md', value)}>salvar</button>
   </div>
 )
 
