@@ -36,12 +36,16 @@ class App extends Component {
 
     this.handleSave = () => {
       if (this.state.isSaving) {
-        localStorage.setItem(this.state.id, this.state.value)
+        const newFile = {
+          title: 'Sem titulo',
+          content: this.state.value
+        }
+        localStorage.setItem(this.state.id, JSON.stringify(newFile))
         this.setState({
           isSaving: false,
           files: {
             ...this.state.files,
-            [this.state.id]: this.state.value
+            [this.state.id]: newFile
           }
         })
       }
@@ -67,7 +71,7 @@ class App extends Component {
     this.textareaRef = node => { this.textarea = node }
 
     this.handleOpenFile = fileId => () => {
-      this.setState({ value: this.state.files[fileId], id: fileId })
+      this.setState({ value: this.state.files[fileId].content, id: fileId })
     }
   }
 
@@ -76,7 +80,7 @@ class App extends Component {
     this.setState({
       files: files.reduce((acc, fileId) => ({
         ...acc,
-        [fileId]: localStorage.getItem(fileId)
+        [fileId]: JSON.parse(localStorage.getItem(fileId))
       }), {})
     })
   }
