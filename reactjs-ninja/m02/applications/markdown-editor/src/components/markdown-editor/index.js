@@ -21,9 +21,7 @@ const MarkdownEditor = ({
 
 MarkdownEditor.propTypes = {
   value: PropTypes.string.isRequired,
-  isSaving: PropTypes.bool.isRequired,
   handleChange: PropTypes.func.isRequired,
-  handleRemove: PropTypes.func.isRequired,
   getMarkup: PropTypes.func.isRequired,
   textareaRef: PropTypes.func.isRequired
 }
