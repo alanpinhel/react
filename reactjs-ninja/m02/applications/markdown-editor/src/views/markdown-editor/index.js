@@ -3,6 +3,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Header from './header'
+import Files from './files'
 
 const MarkdownEditor = ({
   value,
@@ -14,6 +15,7 @@ const MarkdownEditor = ({
   return (
     <section className='editor'>
       <Header {...props} />
+      <Files />
       <textarea value={value} onChange={handleChange} autoFocus ref={textareaRef} />
       <article className='view' dangerouslySetInnerHTML={getMarkup()} />
     </section>
