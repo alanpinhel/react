@@ -52,6 +52,7 @@
     "prop-types": "^15.6.2",
     "react": "15.5.4",
     "react-dom": "15.5.4",
+    "strclass": "^2.0.9",
     "webpack-bundle-analyzer": "^3.0.2"
   },
   "standard": {
