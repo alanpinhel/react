@@ -23,6 +23,7 @@ class App extends Component {
     super()
 
     this.clearState = () => ({
+      title: '',
       value: '',
       id: v4()
     })
@@ -106,7 +107,8 @@ class App extends Component {
         getMarkup={this.getMarkup}
         textareaRef={this.textareaRef}
         files={this.state.files}
-        handleOpenFile={this.handleOpenFile} />
+        handleOpenFile={this.handleOpenFile}
+        title={this.state.files[this.state.id].title} />
     )
   }
 }
