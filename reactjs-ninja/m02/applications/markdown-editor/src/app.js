@@ -37,18 +37,15 @@ class App extends Component {
 
     this.handleSave = () => {
       if (this.state.isSaving) {
-        const newFile = {
-          title: this.state.title || 'Sem titulo',
-          content: this.state.value
-        }
-        localStorage.setItem(this.state.id, JSON.stringify(newFile))
-        this.setState({
-          isSaving: false,
-          files: {
-            ...this.state.files,
-            [this.state.id]: newFile
+        const files = {
+          ...this.state.files,
+          [this.state.id]: {
+            title: this.state.title || 'Sem título',
+            content: this.state.value
           }
-        })
+        }
+        localStorage.setItem('markdown-editor', JSON.stringify(files))
+        this.setState({ isSaving: false, files })
       }
     }
 
@@ -58,9 +55,9 @@ class App extends Component {
     }
 
     this.handleRemove = () => {
-      localStorage.removeItem(this.state.id)
       // eslint-disable-next-line no-unused-vars
       const { [this.state.id]: id, ...files } = this.state.files
+      localStorage.setItem('markdown-editor', this.state.files)
       this.setState({ files })
       this.createNew()
     }
@@ -81,14 +78,8 @@ class App extends Component {
   }
 
   componentDidMount () {
-    const files = Object.keys(localStorage)
-    this.setState({
-      files: files.filter((id) => id.match(/^\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$/))
-        .reduce((acc, fileId) => ({
-          ...acc,
-          [fileId]: JSON.parse(localStorage.getItem(fileId))
-        }), {})
-    })
+    const files = JSON.parse(localStorage.getItem('markdown-editor'))
+    this.setState({ files })
   }
 
   componentDidUpdate () {
