@@ -10,25 +10,25 @@ stories.add('without props', () => (
   <Title>Main title</Title>
 ))
 
-stories.add('Title with async/await', () => {
-  class App extends Component {
+stories.add('async / await', () => {
+  class Main extends Component {
     constructor () {
       super()
       this.state = { title: '...' }
     }
 
     getTitle () {
-      return new Promise((resolve) => {
+      return new Promise((resolve, _reject) => {
         this.timer = setTimeout(() => {
-          resolve('My app with async / await!')
+          resolve('title with async / await!')
         }, 2000)
       })
     }
 
     async componentDidMount () {
-      try {
-        this.setState({ title: await this.getTitle() })
-      } catch (error) { }
+      this.setState({
+        title: await this.getTitle()
+      })
     }
 
     componentWillUnmount () {
@@ -37,12 +37,10 @@ stories.add('Title with async/await', () => {
 
     render () {
       return (
-        <div>
-          <Title>{this.state.title}</Title>
-        </div>
+        <Title>{this.state.title}</Title>
       )
     }
   }
 
-  return <App />
+  return <Main />
 })

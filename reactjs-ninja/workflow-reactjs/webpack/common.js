@@ -11,7 +11,9 @@ const paths = {
 module.exports = {
   paths,
 
-  entry: join(paths.src, 'index'),
+  entry: {
+    main: join(paths.src, 'index')
+  },
 
   output: {
     path: paths.dist,
@@ -26,7 +28,6 @@ module.exports = {
   standardPreLoader: {
     enforce: 'pre',
     test: /\.js$/,
-    exclude: /node_modules/,
     include: paths.src,
     use: {
       loader: 'standard-loader',
@@ -38,14 +39,12 @@ module.exports = {
 
   jsLoader: {
     test: /\.js$/,
-    exclude: /node_modules/,
     include: paths.src,
     use: 'babel-loader'
   },
 
   cssLoader: {
     test: /\.css$/,
-    exclude: /node_modules/,
     include: paths.src,
     use: ['style-loader', 'css-loader']
   },
