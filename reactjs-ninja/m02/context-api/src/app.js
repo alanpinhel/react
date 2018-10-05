@@ -1,42 +1,31 @@
 'use strict'
 
 import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
+import MessageList from 'components/message-list'
 
 import './css/style.css'
 
 class App extends PureComponent {
-  constructor () {
-    super()
-    this.state = {
-      title: '...',
-      Component: 'div'
+  getChildContext () {
+    return {
+      color: 'purple'
     }
-  }
-
-  getTitle () {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve('My app with async / await!')
-      }, 2000)
-    })
-  }
-
-  async componentDidMount () {
-    const title = await import('components/title')
-
-    this.setState({
-      title: await this.getTitle(),
-      Component: title.default
-    })
   }
 
   render () {
     return (
-      <div>
-        <this.state.Component>{this.state.title}</this.state.Component>
-      </div>
+      <MessageList messages={[
+        { text: 'hey' },
+        { text: 'ho' },
+        { text: `let's go` }
+      ]} />
     )
   }
+}
+
+App.childContextTypes = {
+  color: PropTypes.string
 }
 
 export default App
