@@ -14,7 +14,7 @@ class App extends PureComponent {
   }
 
   getTitle () {
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve('My app with async / await!')
       }, 2000)

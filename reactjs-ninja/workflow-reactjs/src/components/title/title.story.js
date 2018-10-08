@@ -18,7 +18,7 @@ stories.add('async / await', () => {
     }
 
     getTitle () {
-      return new Promise((resolve, _reject) => {
+      return new Promise((resolve, reject) => {
         this.timer = setTimeout(() => {
           resolve('title with async / await!')
         }, 2000)
