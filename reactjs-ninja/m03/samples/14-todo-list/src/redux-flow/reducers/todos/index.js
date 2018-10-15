@@ -2,7 +2,7 @@ import { ADD_TODO, TOGGLE_TODO } from './actions';
 
 'use strict'
 
-const initialState = []
+export const initialState = []
 
 const todos = (state = initialState, action) => {
   switch (action.type) {
@@ -25,6 +25,8 @@ const todos = (state = initialState, action) => {
         }
       })
   }
+
+  return state
 }
 
 export default todos
